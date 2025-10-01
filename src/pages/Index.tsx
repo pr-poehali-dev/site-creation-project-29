@@ -37,8 +37,8 @@ const Index = () => {
       
       setTimeout(() => {
         setShowPrize(true);
-      }, 100);
-    }, 2000);
+      }, 500);
+    }, 3500);
   };
 
   return (
@@ -48,13 +48,32 @@ const Index = () => {
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-amber-300 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
       </div>
 
+      {showPrize && (
+        <>
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-3 h-3 bg-amber-400 rounded-full animate-confetti"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: '-5%',
+                animationDelay: `${Math.random() * 0.5}s`
+              }}
+            />
+          ))}
+        </>
+      )}
+
       <div className="relative z-10 max-w-4xl w-full">
-        <div className="text-center mb-12 animate-bounce-in">
-          <img 
-            src="https://cdn.poehali.dev/files/852c4581-a58a-453f-a7ee-24c45a892a49.png" 
-            alt="Логотип Сотка" 
-            className="h-32 mx-auto mb-8 drop-shadow-2xl"
-          />
+        <div className="text-center mb-8 animate-bounce-in">
+          <div className="relative inline-block mb-6">
+            <div className="absolute inset-0 bg-white/30 rounded-full blur-2xl scale-110"></div>
+            <img 
+              src="https://cdn.poehali.dev/files/852c4581-a58a-453f-a7ee-24c45a892a49.png" 
+              alt="Логотип Сотка" 
+              className="relative h-40 md:h-48 drop-shadow-2xl border-4 border-white rounded-3xl bg-blue-600 p-4"
+            />
+          </div>
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-lg">
             Беспроигрышная лотерея
           </h1>
@@ -63,60 +82,71 @@ const Index = () => {
           </p>
         </div>
 
-        <div className="flex justify-center mb-12">
-          <Button
-            onClick={handleSpin}
-            disabled={isSpinning}
-            size="lg"
-            className="bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-white font-bold text-2xl py-8 px-16 rounded-full shadow-2xl transform transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed border-4 border-white"
-          >
-            {isSpinning ? (
-              <span className="flex items-center gap-3">
-                <Icon name="Loader2" className="animate-spin" size={32} />
-                Розыгрыш...
-              </span>
-            ) : (
-              <span className="flex items-center gap-3">
-                <Icon name="Sparkles" size={32} />
-                Крутить барабан
-              </span>
-            )}
-          </Button>
-        </div>
-
-        {wonPrize && showPrize && (
-          <Card className={`p-8 bg-gradient-to-br ${wonPrize.color} border-4 border-white shadow-2xl animate-spin-prize`}>
-            <div className="text-center text-white">
-              <div className="mb-6">
-                <Icon name={wonPrize.icon as any} size={80} className="mx-auto drop-shadow-lg" />
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">
-                Поздравляем! 🎉
-              </h2>
-              <p className="text-3xl md:text-4xl font-bold mb-2">
-                {wonPrize.title}
-              </p>
-              <p className="text-xl md:text-2xl opacity-90">
-                {wonPrize.description}
-              </p>
-            </div>
-          </Card>
+        {!wonPrize && (
+          <div className="flex justify-center mb-12">
+            <Button
+              onClick={handleSpin}
+              disabled={isSpinning}
+              size="lg"
+              className="bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-white font-bold text-2xl py-8 px-16 rounded-full shadow-2xl transform transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed border-4 border-white"
+            >
+              {isSpinning ? (
+                <span className="flex items-center gap-3">
+                  <Icon name="Loader2" className="animate-spin" size={32} />
+                  Крутим барабан...
+                </span>
+              ) : (
+                <span className="flex items-center gap-3">
+                  <Icon name="Sparkles" size={32} />
+                  Крутить барабан
+                </span>
+              )}
+            </Button>
+          </div>
         )}
 
-        {!wonPrize && !isSpinning && (
-          <div className="grid md:grid-cols-2 gap-6 animate-bounce-in">
-            {prizes.map((prize) => (
-              <Card 
-                key={prize.id} 
-                className="p-6 bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:bg-white/20 transition-all duration-300 hover:scale-105"
-              >
-                <div className="text-center text-white">
-                  <Icon name={prize.icon as any} size={48} className="mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold mb-2">{prize.title}</h3>
-                  <p className="text-blue-100">{prize.description}</p>
+        {isSpinning && (
+          <div className="flex justify-center mb-12">
+            <Card className="w-64 h-64 bg-white/20 backdrop-blur-sm border-4 border-white shadow-2xl rounded-full flex items-center justify-center animate-wheel-spin">
+              <Icon name="CircleDot" size={120} className="text-white" />
+            </Card>
+          </div>
+        )}
+
+        {wonPrize && showPrize && (
+          <div className="animate-prize-reveal">
+            <Card className={`p-12 bg-gradient-to-br ${wonPrize.color} border-4 border-white shadow-2xl mb-8`}>
+              <div className="text-center text-white">
+                <div className="mb-8">
+                  <Icon name={wonPrize.icon as any} size={100} className="mx-auto drop-shadow-2xl" />
                 </div>
-              </Card>
-            ))}
+                <h2 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg animate-bounce-in">
+                  🎉 ПОЗДРАВЛЯЕМ! 🎉
+                </h2>
+                <p className="text-2xl md:text-3xl font-medium mb-4 opacity-90">
+                  Вы выиграли:
+                </p>
+                <p className="text-4xl md:text-5xl font-bold mb-4">
+                  {wonPrize.title}
+                </p>
+                <p className="text-2xl md:text-3xl opacity-90">
+                  {wonPrize.description}
+                </p>
+              </div>
+            </Card>
+            
+            <div className="text-center">
+              <Button
+                onClick={() => {
+                  setWonPrize(null);
+                  setShowPrize(false);
+                }}
+                size="lg"
+                className="bg-white text-blue-600 hover:bg-blue-50 font-bold text-xl py-6 px-12 rounded-full shadow-xl"
+              >
+                Попробовать ещё раз
+              </Button>
+            </div>
           </div>
         )}
       </div>

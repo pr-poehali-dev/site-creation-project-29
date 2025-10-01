@@ -98,6 +98,19 @@ export default {
 				'float': {
 					'0%, 100%': { transform: 'translateY(0px)' },
 					'50%': { transform: 'translateY(-10px)' }
+				},
+				'wheel-spin': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(1440deg)' }
+				},
+				'confetti': {
+					'0%': { transform: 'translateY(-100%) rotate(0deg)', opacity: '1' },
+					'100%': { transform: 'translateY(100vh) rotate(720deg)', opacity: '0' }
+				},
+				'prize-reveal': {
+					'0%': { transform: 'scale(0) rotate(-180deg)', opacity: '0' },
+					'60%': { transform: 'scale(1.2) rotate(10deg)', opacity: '1' },
+					'100%': { transform: 'scale(1) rotate(0deg)', opacity: '1' }
 				}
 			},
 			animation: {
@@ -105,7 +118,10 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'spin-prize': 'spin-prize 1s ease-out',
 				'bounce-in': 'bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-				'float': 'float 3s ease-in-out infinite'
+				'float': 'float 3s ease-in-out infinite',
+				'wheel-spin': 'wheel-spin 3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+				'confetti': 'confetti 2s ease-out forwards',
+				'prize-reveal': 'prize-reveal 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)'
 			}
 		}
 	},
