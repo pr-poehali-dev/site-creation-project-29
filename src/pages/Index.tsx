@@ -139,13 +139,17 @@ const Index = () => {
                   <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white animate-bounce-in tracking-tight mb-8">
                     Поздравляем!
                   </h2>
-                  <div className="bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl">
-                    <p className="text-4xl sm:text-5xl md:text-6xl font-bold text-blue-600 mb-3">
-                      {wonPrize.title}
-                    </p>
-                    <p className="text-xl sm:text-2xl text-gray-700">
-                      {wonPrize.description}
-                    </p>
+                  <div className="relative overflow-hidden bg-gradient-to-br from-[#005BFF] to-[#0046CC] rounded-2xl sm:rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF1744] rounded-full blur-3xl opacity-30 -translate-y-1/2 translate-x-1/2"></div>
+                    <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#FF1744] rounded-full blur-2xl opacity-20 translate-y-1/2 -translate-x-1/2"></div>
+                    <div className="relative z-10">
+                      <p className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-3">
+                        {wonPrize.title}
+                      </p>
+                      <p className="text-xl sm:text-2xl text-white/90">
+                        {wonPrize.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
 
@@ -155,7 +159,7 @@ const Index = () => {
                     setShowPrize(false);
                   }}
                   size="lg"
-                  className="mt-12 bg-white/20 backdrop-blur-sm text-white border-2 border-white/40 hover:bg-white/30 font-semibold text-lg sm:text-xl py-6 px-12 rounded-full shadow-xl transition-all"
+                  className="mt-12 bg-white text-[#005BFF] hover:bg-white/90 font-bold text-lg sm:text-xl py-6 px-12 rounded-full shadow-xl transition-all"
                 >
                   Попробовать ещё раз
                 </Button>
