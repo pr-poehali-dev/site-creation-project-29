@@ -184,7 +184,8 @@ const Index = () => {
                       <img 
                         src="https://cdn.poehali.dev/files/787cee36-2846-406d-b45e-97b75e9ffc6a.png"
                         alt="Сотка"
-                        className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain opacity-40"
+                        className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 object-contain opacity-50"
+                        onError={(e) => console.log('Image failed to load:', e)}
                       />
                     </div>
                     <div className="relative z-10">
