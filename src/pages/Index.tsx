@@ -9,6 +9,7 @@ const prizes = [
     title: '2000 рублей на Озон',
     description: 'Сертификат на покупки в Озон',
     icon: 'Gift',
+    image: 'https://cdn.poehali.dev/files/e25cb8a5-73a4-4e06-a9cd-34bd57eebc64.jpg',
     color: 'from-amber-400 to-orange-500'
   },
   {
@@ -16,6 +17,7 @@ const prizes = [
     title: '2 месяца бесплатного обучения',
     description: 'Доступ ко всем курсам',
     icon: 'GraduationCap',
+    image: null,
     color: 'from-blue-400 to-blue-600'
   }
 ];
@@ -132,7 +134,15 @@ const Index = () => {
             <Card className={`p-6 sm:p-8 md:p-12 bg-gradient-to-br ${wonPrize.color} border-2 sm:border-4 border-white shadow-2xl mb-6 sm:mb-8`}>
               <div className="text-center text-white">
                 <div className="mb-4 sm:mb-6 md:mb-8">
-                  <Icon name={wonPrize.icon} size={60} className="mx-auto drop-shadow-2xl sm:w-20 sm:h-20 md:w-24 md:h-24" />
+                  {wonPrize.image ? (
+                    <img 
+                      src={wonPrize.image} 
+                      alt={wonPrize.title}
+                      className="mx-auto w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 object-contain drop-shadow-2xl"
+                    />
+                  ) : (
+                    <Icon name={wonPrize.icon} size={60} className="mx-auto drop-shadow-2xl sm:w-20 sm:h-20 md:w-24 md:h-24" />
+                  )}
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 drop-shadow-lg animate-bounce-in">
                   🎉 ПОЗДРАВЛЯЕМ! 🎉
