@@ -134,44 +134,41 @@ const Index = () => {
         {wonPrize && showPrize && (
           <div className="animate-prize-reveal">
             {wonPrize.image ? (
-              <div className="relative text-center">
-                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 sm:mb-12 text-white drop-shadow-lg animate-bounce-in">
-                  🎉 Поздравляем! 🎉
-                </h2>
-                <div className="relative inline-block mb-8 sm:mb-12">
-                  <div className="absolute -left-20 top-1/2 w-96 h-1 bg-gradient-to-r from-transparent via-orange-400/50 to-orange-500/70 blur-sm animate-rocket-fly"></div>
-                  <div className="absolute -left-16 top-1/2 w-80 h-2 bg-gradient-to-r from-transparent via-blue-400/40 to-blue-500/60 blur-md animate-rocket-fly" style={{ animationDelay: '0.1s' }}></div>
+              <div className="relative text-center flex flex-col items-center justify-center min-h-[60vh]">
+                <div className="relative mb-12">
+                  <div className="absolute -left-32 top-1/2 w-[500px] h-2 bg-gradient-to-r from-transparent via-orange-400/30 to-orange-500/50 blur-lg animate-rocket-fly"></div>
                   <img 
                     src={wonPrize.image} 
                     alt={wonPrize.title}
-                    className="relative w-56 sm:w-64 md:w-80 h-auto object-contain drop-shadow-2xl animate-rocket-fly"
-                    style={{ animationDelay: '0s' }}
+                    className="relative w-32 sm:w-40 md:w-48 h-auto object-contain drop-shadow-2xl animate-rocket-fly opacity-90"
                     onAnimationEnd={(e) => {
                       e.currentTarget.classList.remove('animate-rocket-fly');
                       e.currentTarget.classList.add('animate-rocket-hover');
                     }}
                   />
                 </div>
-                <div className="relative overflow-hidden bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-3xl p-6 sm:p-8 md:p-10 mb-8 max-w-lg mx-auto animate-rocket-hover">
-                  <img 
-                    src={wonPrize.image}
-                    alt=""
-                    className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain opacity-50 animate-rocket-hover"
-                  />
-                  <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-white drop-shadow-lg relative z-10">
-                    {wonPrize.title}
-                  </p>
-                  <p className="text-lg sm:text-xl md:text-2xl text-white/90 drop-shadow relative z-10">
-                    {wonPrize.description}
-                  </p>
+                
+                <div className="space-y-4 max-w-2xl px-4">
+                  <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white animate-bounce-in tracking-tight">
+                    Поздравляем!
+                  </h2>
+                  <div className="bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl">
+                    <p className="text-4xl sm:text-5xl md:text-6xl font-bold text-blue-600 mb-3">
+                      {wonPrize.title}
+                    </p>
+                    <p className="text-xl sm:text-2xl text-gray-700">
+                      {wonPrize.description}
+                    </p>
+                  </div>
                 </div>
+
                 <Button
                   onClick={() => {
                     setWonPrize(null);
                     setShowPrize(false);
                   }}
                   size="lg"
-                  className="bg-white text-blue-600 hover:bg-blue-50 font-bold text-base sm:text-lg md:text-xl py-4 px-8 sm:py-6 sm:px-12 rounded-full shadow-xl"
+                  className="mt-12 bg-white/20 backdrop-blur-sm text-white border-2 border-white/40 hover:bg-white/30 font-semibold text-lg sm:text-xl py-6 px-12 rounded-full shadow-xl transition-all"
                 >
                   Попробовать ещё раз
                 </Button>
