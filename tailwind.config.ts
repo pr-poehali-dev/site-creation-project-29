@@ -113,8 +113,13 @@ export default {
 					'100%': { transform: 'scale(1) rotate(0deg)', opacity: '1' }
 				},
 				'rocket-fly': {
-					'0%': { transform: 'translate(-50px, 50px) rotate(-15deg) scale(0.8)', opacity: '0' },
+					'0%': { transform: 'translate(-200px, 150px) rotate(-45deg) scale(0.5)', opacity: '0' },
+					'50%': { transform: 'translate(-50px, 50px) rotate(-20deg) scale(0.8)', opacity: '1' },
 					'100%': { transform: 'translate(0, 0) rotate(0deg) scale(1)', opacity: '1' }
+				},
+				'rocket-hover': {
+					'0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+					'50%': { transform: 'translateY(-15px) rotate(3deg)' }
 				}
 			},
 			animation: {
@@ -126,7 +131,8 @@ export default {
 				'slot-roll': 'slot-roll 2s ease-in-out infinite',
 				'confetti': 'confetti 2s ease-out forwards',
 				'prize-reveal': 'prize-reveal 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-				'rocket-fly': 'rocket-fly 1s ease-out'
+				'rocket-fly': 'rocket-fly 1.5s ease-out forwards',
+				'rocket-hover': 'rocket-hover 2s ease-in-out infinite'
 			}
 		}
 	},

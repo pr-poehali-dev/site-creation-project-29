@@ -137,10 +137,17 @@ const Index = () => {
                   🎉 Поздравляем! 🎉
                 </h2>
                 <div className="relative inline-block mb-8 sm:mb-12">
+                  <div className="absolute -left-20 top-1/2 w-96 h-1 bg-gradient-to-r from-transparent via-orange-400/50 to-orange-500/70 blur-sm animate-rocket-fly"></div>
+                  <div className="absolute -left-16 top-1/2 w-80 h-2 bg-gradient-to-r from-transparent via-blue-400/40 to-blue-500/60 blur-md animate-rocket-fly" style={{ animationDelay: '0.1s' }}></div>
                   <img 
                     src={wonPrize.image} 
                     alt={wonPrize.title}
-                    className="w-56 sm:w-64 md:w-80 h-auto object-contain drop-shadow-2xl animate-rocket-fly"
+                    className="relative w-56 sm:w-64 md:w-80 h-auto object-contain drop-shadow-2xl animate-rocket-fly"
+                    style={{ animationDelay: '0s' }}
+                    onAnimationEnd={(e) => {
+                      e.currentTarget.classList.remove('animate-rocket-fly');
+                      e.currentTarget.classList.add('animate-rocket-hover');
+                    }}
                   />
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-3xl p-6 sm:p-8 md:p-10 mb-8 max-w-lg mx-auto">
