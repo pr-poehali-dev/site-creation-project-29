@@ -18,7 +18,7 @@ const prizes = [
     description: 'Доступ ко всем курсам',
     icon: 'GraduationCap',
     image: null,
-    color: 'from-blue-400 to-blue-600'
+    color: 'from-blue-600 via-blue-500 to-orange-500'
   }
 ];
 
