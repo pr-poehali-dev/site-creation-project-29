@@ -152,11 +152,16 @@ const Index = () => {
                     }}
                   />
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-3xl p-6 sm:p-8 md:p-10 mb-8 max-w-lg mx-auto">
-                  <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-white drop-shadow-lg">
+                <div className="relative overflow-hidden bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-3xl p-6 sm:p-8 md:p-10 mb-8 max-w-lg mx-auto animate-rocket-hover">
+                  <img 
+                    src={wonPrize.image}
+                    alt=""
+                    className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain opacity-50 animate-rocket-hover"
+                  />
+                  <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-white drop-shadow-lg relative z-10">
                     {wonPrize.title}
                   </p>
-                  <p className="text-lg sm:text-xl md:text-2xl text-white/90 drop-shadow">
+                  <p className="text-lg sm:text-xl md:text-2xl text-white/90 drop-shadow relative z-10">
                     {wonPrize.description}
                   </p>
                 </div>
@@ -166,14 +171,9 @@ const Index = () => {
                     setShowPrize(false);
                   }}
                   size="lg"
-                  className="relative overflow-hidden bg-white text-blue-600 hover:bg-blue-50 font-bold text-base sm:text-lg md:text-xl py-4 px-8 sm:py-6 sm:px-12 rounded-full shadow-xl animate-rocket-hover"
+                  className="bg-white text-blue-600 hover:bg-blue-50 font-bold text-base sm:text-lg md:text-xl py-4 px-8 sm:py-6 sm:px-12 rounded-full shadow-xl"
                 >
-                  <img 
-                    src={wonPrize.image}
-                    alt=""
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 object-contain opacity-50 animate-rocket-hover"
-                  />
-                  <span className="relative z-10">Попробовать ещё раз</span>
+                  Попробовать ещё раз
                 </Button>
               </div>
             ) : (
