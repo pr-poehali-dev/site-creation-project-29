@@ -166,7 +166,7 @@ const Index = () => {
                   size="lg"
                   className="mt-12 bg-white text-[#005BFF] hover:bg-white/90 font-bold text-lg sm:text-xl py-6 px-12 rounded-full shadow-xl transition-all"
                 >
-                  Попробовать ещё раз
+                  Новый участник
                 </Button>
               </div>
             ) : (
@@ -198,7 +198,7 @@ const Index = () => {
                   size="lg"
                   className="mt-12 bg-white text-blue-600 hover:bg-white/90 font-bold text-lg sm:text-xl py-6 px-12 rounded-full shadow-xl transition-all"
                 >
-                  Попробовать ещё раз
+                  Новый участник
                 </Button>
               </div>
             )}
