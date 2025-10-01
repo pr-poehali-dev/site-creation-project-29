@@ -166,9 +166,14 @@ const Index = () => {
                     setShowPrize(false);
                   }}
                   size="lg"
-                  className="bg-white text-blue-600 hover:bg-blue-50 font-bold text-base sm:text-lg md:text-xl py-4 px-8 sm:py-6 sm:px-12 rounded-full shadow-xl"
+                  className="relative overflow-hidden bg-white text-blue-600 hover:bg-blue-50 font-bold text-base sm:text-lg md:text-xl py-4 px-8 sm:py-6 sm:px-12 rounded-full shadow-xl animate-rocket-hover"
                 >
-                  Попробовать ещё раз
+                  <img 
+                    src={wonPrize.image}
+                    alt=""
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 object-contain opacity-50 animate-rocket-hover"
+                  />
+                  <span className="relative z-10">Попробовать ещё раз</span>
                 </Button>
               </div>
             ) : (
