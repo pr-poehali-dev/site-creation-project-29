@@ -18,7 +18,8 @@ const prizes = [
     description: 'Доступ ко всем курсам',
     icon: 'GraduationCap',
     image: null,
-    color: 'from-blue-600 via-blue-500 to-orange-500'
+    color: 'from-[#2563EB] to-[#1D4ED8]',
+    logo: 'https://cdn.poehali.dev/files/787cee36-2846-406d-b45e-97b75e9ffc6a.png'
   }
 ];
 
@@ -175,9 +176,16 @@ const Index = () => {
                   <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white animate-bounce-in tracking-tight mb-8">
                     Поздравляем!
                   </h2>
-                  <div className={`relative overflow-hidden rounded-2xl sm:rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl bg-gradient-to-br ${wonPrize.color}`}>
+                  <div className={`relative overflow-hidden rounded-2xl sm:rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl bg-[#2563EB]`}>
                     <div className="absolute inset-0 overflow-hidden">
                       <div className="absolute top-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-[-25deg] animate-shine"></div>
+                    </div>
+                    <div className="absolute top-6 right-6 sm:top-8 sm:right-8">
+                      <img 
+                        src="https://cdn.poehali.dev/files/787cee36-2846-406d-b45e-97b75e9ffc6a.png"
+                        alt="Сотка"
+                        className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain opacity-40"
+                      />
                     </div>
                     <div className="relative z-10">
                       <p className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-3 drop-shadow-lg">
@@ -196,7 +204,7 @@ const Index = () => {
                     setShowPrize(false);
                   }}
                   size="lg"
-                  className="mt-12 bg-white text-blue-600 hover:bg-white/90 font-bold text-lg sm:text-xl py-6 px-12 rounded-full shadow-xl transition-all"
+                  className="mt-12 bg-white text-[#2563EB] hover:bg-white/90 font-bold text-lg sm:text-xl py-6 px-12 rounded-full shadow-xl transition-all"
                 >
                   Новый участник
                 </Button>
