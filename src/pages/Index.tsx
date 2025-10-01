@@ -132,36 +132,36 @@ const Index = () => {
         {wonPrize && showPrize && (
           <div className="animate-prize-reveal">
             {wonPrize.image ? (
-              <Card className="p-8 sm:p-10 md:p-12 bg-white border-2 sm:border-4 border-white shadow-2xl mb-6 sm:mb-8">
-                <div className="text-center">
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-blue-600 animate-bounce-in">
-                    🎉 Поздравляем! 🎉
-                  </h2>
-                  <div className="mb-6 sm:mb-8">
-                    <img 
-                      src={wonPrize.image} 
-                      alt={wonPrize.title}
-                      className="mx-auto w-48 sm:w-56 md:w-64 h-auto object-contain drop-shadow-2xl"
-                    />
-                  </div>
-                  <p className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-gray-800 px-2">
+              <div className="relative text-center">
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 sm:mb-12 text-white drop-shadow-lg animate-bounce-in">
+                  🎉 Поздравляем! 🎉
+                </h2>
+                <div className="relative inline-block mb-8 sm:mb-12">
+                  <img 
+                    src={wonPrize.image} 
+                    alt={wonPrize.title}
+                    className="w-56 sm:w-64 md:w-80 h-auto object-contain drop-shadow-2xl animate-rocket-fly"
+                  />
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-3xl p-6 sm:p-8 md:p-10 mb-8 max-w-lg mx-auto">
+                  <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-white drop-shadow-lg">
                     {wonPrize.title}
                   </p>
-                  <p className="text-lg sm:text-xl md:text-2xl text-gray-600 px-2 mb-8 sm:mb-10">
+                  <p className="text-lg sm:text-xl md:text-2xl text-white/90 drop-shadow">
                     {wonPrize.description}
                   </p>
-                  <Button
-                    onClick={() => {
-                      setWonPrize(null);
-                      setShowPrize(false);
-                    }}
-                    size="lg"
-                    className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold text-base sm:text-lg md:text-xl py-4 px-8 sm:py-6 sm:px-12 rounded-full shadow-xl"
-                  >
-                    Попробовать ещё раз
-                  </Button>
                 </div>
-              </Card>
+                <Button
+                  onClick={() => {
+                    setWonPrize(null);
+                    setShowPrize(false);
+                  }}
+                  size="lg"
+                  className="bg-white text-blue-600 hover:bg-blue-50 font-bold text-base sm:text-lg md:text-xl py-4 px-8 sm:py-6 sm:px-12 rounded-full shadow-xl"
+                >
+                  Попробовать ещё раз
+                </Button>
+              </div>
             ) : (
               <Card className={`p-6 sm:p-8 md:p-12 bg-gradient-to-br ${wonPrize.color} border-2 sm:border-4 border-white shadow-2xl mb-6 sm:mb-8`}>
                 <div className="text-center text-white">

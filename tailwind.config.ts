@@ -111,6 +111,10 @@ export default {
 					'0%': { transform: 'scale(0) rotate(-180deg)', opacity: '0' },
 					'60%': { transform: 'scale(1.2) rotate(10deg)', opacity: '1' },
 					'100%': { transform: 'scale(1) rotate(0deg)', opacity: '1' }
+				},
+				'rocket-fly': {
+					'0%': { transform: 'translate(-50px, 50px) rotate(-15deg) scale(0.8)', opacity: '0' },
+					'100%': { transform: 'translate(0, 0) rotate(0deg) scale(1)', opacity: '1' }
 				}
 			},
 			animation: {
@@ -121,7 +125,8 @@ export default {
 				'float': 'float 3s ease-in-out infinite',
 				'slot-roll': 'slot-roll 2s ease-in-out infinite',
 				'confetti': 'confetti 2s ease-out forwards',
-				'prize-reveal': 'prize-reveal 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)'
+				'prize-reveal': 'prize-reveal 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+				'rocket-fly': 'rocket-fly 1s ease-out'
 			}
 		}
 	},
