@@ -42,7 +42,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-600 via-blue-500 to-blue-700 flex items-center justify-center p-4 overflow-hidden relative">
+    <div className="min-h-screen bg-gradient-to-br from-blue-600 via-blue-500 to-blue-700 flex items-center justify-center p-4 sm:p-6 md:p-8 overflow-hidden relative">
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-72 h-72 bg-white rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-amber-300 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
@@ -66,39 +66,41 @@ const Index = () => {
 
       <div className="relative z-10 max-w-4xl w-full">
         <div className="text-center mb-8 animate-bounce-in">
-          <div className="relative inline-block mb-6">
+          <div className="relative inline-block mb-4 sm:mb-6">
             <div className="absolute inset-0 bg-white/30 rounded-full blur-2xl scale-110"></div>
             <img 
               src="https://cdn.poehali.dev/files/852c4581-a58a-453f-a7ee-24c45a892a49.png" 
               alt="Логотип Сотка" 
-              className="relative h-40 md:h-48 drop-shadow-2xl border-4 border-white rounded-3xl bg-blue-600 p-4"
+              className="relative h-24 sm:h-32 md:h-40 lg:h-48 drop-shadow-2xl border-2 sm:border-4 border-white rounded-2xl sm:rounded-3xl bg-blue-600 p-2 sm:p-3 md:p-4"
             />
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-lg">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-2 sm:mb-4 drop-shadow-lg px-2">
             Беспроигрышная лотерея
           </h1>
-          <p className="text-xl md:text-2xl text-blue-100 font-medium">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 font-medium px-2">
             Каждый участник — победитель!
           </p>
         </div>
 
         {!wonPrize && (
-          <div className="flex justify-center mb-12">
+          <div className="flex justify-center mb-8 sm:mb-12">
             <Button
               onClick={handleSpin}
               disabled={isSpinning}
               size="lg"
-              className="bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-white font-bold text-2xl py-8 px-16 rounded-full shadow-2xl transform transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed border-4 border-white"
+              className="bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-white font-bold text-lg sm:text-xl md:text-2xl py-4 px-8 sm:py-6 sm:px-12 md:py-8 md:px-16 rounded-full shadow-2xl transform transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed border-2 sm:border-4 border-white"
             >
               {isSpinning ? (
-                <span className="flex items-center gap-3">
-                  <Icon name="Loader2" className="animate-spin" size={32} />
-                  Крутим барабан...
+                <span className="flex items-center gap-2 sm:gap-3">
+                  <Icon name="Loader2" className="animate-spin" size={24} />
+                  <span className="hidden sm:inline">Крутим барабан...</span>
+                  <span className="sm:hidden">Крутим...</span>
                 </span>
               ) : (
-                <span className="flex items-center gap-3">
-                  <Icon name="Sparkles" size={32} />
-                  Крутить барабан
+                <span className="flex items-center gap-2 sm:gap-3">
+                  <Icon name="Sparkles" size={24} />
+                  <span className="hidden sm:inline">Крутить барабан</span>
+                  <span className="sm:hidden">Крутить</span>
                 </span>
               )}
             </Button>
@@ -106,20 +108,20 @@ const Index = () => {
         )}
 
         {isSpinning && (
-          <div className="flex flex-col items-center mb-12">
-            <div className="relative w-80 h-40 bg-white/20 backdrop-blur-sm border-4 border-white shadow-2xl rounded-3xl overflow-hidden">
+          <div className="flex flex-col items-center mb-8 sm:mb-12">
+            <div className="relative w-64 h-32 sm:w-80 sm:h-40 bg-white/20 backdrop-blur-sm border-2 sm:border-4 border-white shadow-2xl rounded-2xl sm:rounded-3xl overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-full h-px bg-white/50"></div>
               </div>
               <div className="animate-slot-roll">
                 {[...prizes, ...prizes, ...prizes, ...prizes, ...prizes].map((prize, idx) => (
-                  <div key={idx} className="h-40 flex items-center justify-center">
-                    <Icon name={prize.icon} size={80} className="text-white" />
+                  <div key={idx} className="h-32 sm:h-40 flex items-center justify-center">
+                    <Icon name={prize.icon} size={60} className="text-white sm:w-20 sm:h-20" />
                   </div>
                 ))}
               </div>
             </div>
-            <p className="text-white text-2xl font-bold mt-6 animate-pulse">
+            <p className="text-white text-lg sm:text-xl md:text-2xl font-bold mt-4 sm:mt-6 animate-pulse px-4 text-center">
               Определяем победителя...
             </p>
           </div>
@@ -127,21 +129,21 @@ const Index = () => {
 
         {wonPrize && showPrize && (
           <div className="animate-prize-reveal">
-            <Card className={`p-12 bg-gradient-to-br ${wonPrize.color} border-4 border-white shadow-2xl mb-8`}>
+            <Card className={`p-6 sm:p-8 md:p-12 bg-gradient-to-br ${wonPrize.color} border-2 sm:border-4 border-white shadow-2xl mb-6 sm:mb-8`}>
               <div className="text-center text-white">
-                <div className="mb-8">
-                  <Icon name={wonPrize.icon} size={100} className="mx-auto drop-shadow-2xl" />
+                <div className="mb-4 sm:mb-6 md:mb-8">
+                  <Icon name={wonPrize.icon} size={60} className="mx-auto drop-shadow-2xl sm:w-20 sm:h-20 md:w-24 md:h-24" />
                 </div>
-                <h2 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg animate-bounce-in">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 drop-shadow-lg animate-bounce-in">
                   🎉 ПОЗДРАВЛЯЕМ! 🎉
                 </h2>
-                <p className="text-2xl md:text-3xl font-medium mb-4 opacity-90">
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium mb-2 sm:mb-4 opacity-90">
                   Вы выиграли:
                 </p>
-                <p className="text-4xl md:text-5xl font-bold mb-4">
+                <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4 px-2">
                   {wonPrize.title}
                 </p>
-                <p className="text-2xl md:text-3xl opacity-90">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl opacity-90 px-2">
                   {wonPrize.description}
                 </p>
               </div>
@@ -154,7 +156,7 @@ const Index = () => {
                   setShowPrize(false);
                 }}
                 size="lg"
-                className="bg-white text-blue-600 hover:bg-blue-50 font-bold text-xl py-6 px-12 rounded-full shadow-xl"
+                className="bg-white text-blue-600 hover:bg-blue-50 font-bold text-base sm:text-lg md:text-xl py-4 px-8 sm:py-6 sm:px-12 rounded-full shadow-xl"
               >
                 Попробовать ещё раз
               </Button>
