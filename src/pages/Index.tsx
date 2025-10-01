@@ -135,16 +135,11 @@ const Index = () => {
           <div className="animate-prize-reveal">
             {wonPrize.image ? (
               <div className="relative text-center flex flex-col items-center justify-center min-h-[60vh]">
-                <div className="relative mb-12">
-                  <div className="absolute -left-32 top-1/2 w-[500px] h-2 bg-gradient-to-r from-transparent via-orange-400/30 to-orange-500/50 blur-lg animate-rocket-fly"></div>
+                <div className="relative mb-12 animate-bounce-in">
                   <img 
-                    src={wonPrize.image} 
-                    alt={wonPrize.title}
-                    className="relative w-32 sm:w-40 md:w-48 h-auto object-contain drop-shadow-2xl animate-rocket-fly opacity-90"
-                    onAnimationEnd={(e) => {
-                      e.currentTarget.classList.remove('animate-rocket-fly');
-                      e.currentTarget.classList.add('animate-rocket-hover');
-                    }}
+                    src="https://cdn.poehali.dev/files/d300f3dc-0553-4acd-bb7e-9561b4be92bc.png" 
+                    alt="Ozon"
+                    className="w-48 sm:w-64 md:w-80 h-auto object-contain drop-shadow-2xl"
                   />
                 </div>
                 
