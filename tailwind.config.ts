@@ -99,9 +99,9 @@ export default {
 					'0%, 100%': { transform: 'translateY(0px)' },
 					'50%': { transform: 'translateY(-10px)' }
 				},
-				'wheel-spin': {
-					'0%': { transform: 'rotate(0deg)' },
-					'100%': { transform: 'rotate(1440deg)' }
+				'slot-roll': {
+					'0%': { transform: 'translateY(0%)' },
+					'100%': { transform: 'translateY(-400%)' }
 				},
 				'confetti': {
 					'0%': { transform: 'translateY(-100%) rotate(0deg)', opacity: '1' },
@@ -119,7 +119,7 @@ export default {
 				'spin-prize': 'spin-prize 1s ease-out',
 				'bounce-in': 'bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
 				'float': 'float 3s ease-in-out infinite',
-				'wheel-spin': 'wheel-spin 3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+				'slot-roll': 'slot-roll 2s ease-in-out infinite',
 				'confetti': 'confetti 2s ease-out forwards',
 				'prize-reveal': 'prize-reveal 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)'
 			}

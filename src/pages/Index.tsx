@@ -106,10 +106,22 @@ const Index = () => {
         )}
 
         {isSpinning && (
-          <div className="flex justify-center mb-12">
-            <Card className="w-64 h-64 bg-white/20 backdrop-blur-sm border-4 border-white shadow-2xl rounded-full flex items-center justify-center animate-wheel-spin">
-              <Icon name="CircleDot" size={120} className="text-white" />
-            </Card>
+          <div className="flex flex-col items-center mb-12">
+            <div className="relative w-80 h-40 bg-white/20 backdrop-blur-sm border-4 border-white shadow-2xl rounded-3xl overflow-hidden">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-full h-px bg-white/50"></div>
+              </div>
+              <div className="animate-slot-roll">
+                {[...prizes, ...prizes, ...prizes, ...prizes, ...prizes].map((prize, idx) => (
+                  <div key={idx} className="h-40 flex items-center justify-center">
+                    <Icon name={prize.icon} size={80} className="text-white" />
+                  </div>
+                ))}
+              </div>
+            </div>
+            <p className="text-white text-2xl font-bold mt-6 animate-pulse">
+              Определяем победителя...
+            </p>
           </div>
         )}
 
