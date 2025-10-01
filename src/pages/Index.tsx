@@ -134,17 +134,9 @@ const Index = () => {
         {wonPrize && showPrize && (
           <div className="animate-prize-reveal">
             {wonPrize.image ? (
-              <div className="relative text-center flex flex-col items-center justify-center min-h-[60vh]">
-                <div className="relative mb-12 animate-bounce-in">
-                  <img 
-                    src="https://cdn.poehali.dev/files/d300f3dc-0553-4acd-bb7e-9561b4be92bc.png" 
-                    alt="Ozon"
-                    className="w-48 sm:w-64 md:w-80 h-auto object-contain drop-shadow-2xl"
-                  />
-                </div>
-                
-                <div className="space-y-4 max-w-2xl px-4">
-                  <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white animate-bounce-in tracking-tight">
+              <div className="relative text-center flex flex-col items-center justify-center min-h-[70vh]">
+                <div className="space-y-6 max-w-2xl px-4">
+                  <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white animate-bounce-in tracking-tight mb-8">
                     Поздравляем!
                   </h2>
                   <div className="bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl">
