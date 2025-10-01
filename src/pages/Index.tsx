@@ -118,7 +118,7 @@ const Index = () => {
             <Card className={`p-12 bg-gradient-to-br ${wonPrize.color} border-4 border-white shadow-2xl mb-8`}>
               <div className="text-center text-white">
                 <div className="mb-8">
-                  <Icon name={wonPrize.icon as any} size={100} className="mx-auto drop-shadow-2xl" />
+                  <Icon name={wonPrize.icon} size={100} className="mx-auto drop-shadow-2xl" />
                 </div>
                 <h2 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg animate-bounce-in">
                   🎉 ПОЗДРАВЛЯЕМ! 🎉
