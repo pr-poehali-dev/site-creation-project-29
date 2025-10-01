@@ -170,35 +170,37 @@ const Index = () => {
                 </Button>
               </div>
             ) : (
-              <Card className={`p-6 sm:p-8 md:p-12 bg-gradient-to-br ${wonPrize.color} border-2 sm:border-4 border-white shadow-2xl mb-6 sm:mb-8`}>
-                <div className="text-center text-white">
-                  <div className="mb-4 sm:mb-6 md:mb-8">
-                    <Icon name={wonPrize.icon} size={60} className="mx-auto drop-shadow-2xl sm:w-20 sm:h-20 md:w-24 md:h-24" />
-                  </div>
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 drop-shadow-lg animate-bounce-in">
-                    🎉 ПОЗДРАВЛЯЕМ! 🎉
+              <div className="relative text-center flex flex-col items-center justify-center min-h-[70vh]">
+                <div className="space-y-6 max-w-2xl px-4">
+                  <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white animate-bounce-in tracking-tight mb-8">
+                    Поздравляем!
                   </h2>
-                  <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium mb-2 sm:mb-4 opacity-90">
-                    Вы выиграли:
-                  </p>
-                  <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4 px-2">
-                    {wonPrize.title}
-                  </p>
-                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl opacity-90 px-2 mb-6 sm:mb-8">
-                    {wonPrize.description}
-                  </p>
-                  <Button
-                    onClick={() => {
-                      setWonPrize(null);
-                      setShowPrize(false);
-                    }}
-                    size="lg"
-                    className="bg-white text-blue-600 hover:bg-blue-50 font-bold text-base sm:text-lg md:text-xl py-4 px-8 sm:py-6 sm:px-12 rounded-full shadow-xl"
-                  >
-                    Попробовать ещё раз
-                  </Button>
+                  <div className={`relative overflow-hidden rounded-2xl sm:rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl bg-gradient-to-br ${wonPrize.color}`}>
+                    <div className="absolute inset-0 overflow-hidden">
+                      <div className="absolute top-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-[-25deg] animate-shine"></div>
+                    </div>
+                    <div className="relative z-10">
+                      <p className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-3 drop-shadow-lg">
+                        {wonPrize.title}
+                      </p>
+                      <p className="text-xl sm:text-2xl text-white drop-shadow-md">
+                        {wonPrize.description}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </Card>
+
+                <Button
+                  onClick={() => {
+                    setWonPrize(null);
+                    setShowPrize(false);
+                  }}
+                  size="lg"
+                  className="mt-12 bg-white text-blue-600 hover:bg-white/90 font-bold text-lg sm:text-xl py-6 px-12 rounded-full shadow-xl transition-all"
+                >
+                  Попробовать ещё раз
+                </Button>
+              </div>
             )}
           </div>
         )}
