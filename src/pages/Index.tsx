@@ -180,14 +180,6 @@ const Index = () => {
                     <div className="absolute inset-0 overflow-hidden">
                       <div className="absolute top-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-[-25deg] animate-shine"></div>
                     </div>
-                    <div className="absolute top-6 right-6 sm:top-8 sm:right-8">
-                      <img 
-                        src="https://cdn.poehali.dev/files/787cee36-2846-406d-b45e-97b75e9ffc6a.png"
-                        alt="Сотка"
-                        className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 object-contain opacity-50"
-                        onError={(e) => console.log('Image failed to load:', e)}
-                      />
-                    </div>
                     <div className="relative z-10">
                       <p className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-3 drop-shadow-lg">
                         {wonPrize.title}
