@@ -67,22 +67,24 @@ const Index = () => {
       )}
 
       <div className="relative z-10 max-w-4xl w-full">
-        <div className="text-center mb-8 animate-bounce-in">
-          <div className="relative inline-block mb-4 sm:mb-6">
-            <div className="absolute inset-0 bg-white/30 rounded-full blur-2xl scale-110"></div>
-            <img 
-              src="https://cdn.poehali.dev/files/852c4581-a58a-453f-a7ee-24c45a892a49.png" 
-              alt="Логотип Сотка" 
-              className="relative h-24 sm:h-32 md:h-40 lg:h-48 drop-shadow-2xl border-2 sm:border-4 border-white rounded-2xl sm:rounded-3xl bg-blue-600 p-2 sm:p-3 md:p-4"
-            />
+        {!showPrize && (
+          <div className="text-center mb-8 animate-bounce-in">
+            <div className="relative inline-block mb-4 sm:mb-6">
+              <div className="absolute inset-0 bg-white/30 rounded-full blur-2xl scale-110"></div>
+              <img 
+                src="https://cdn.poehali.dev/files/852c4581-a58a-453f-a7ee-24c45a892a49.png" 
+                alt="Логотип Сотка" 
+                className="relative h-24 sm:h-32 md:h-40 lg:h-48 drop-shadow-2xl border-2 sm:border-4 border-white rounded-2xl sm:rounded-3xl bg-blue-600 p-2 sm:p-3 md:p-4"
+              />
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-2 sm:mb-4 drop-shadow-lg px-2">
+              Беспроигрышная лотерея
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 font-medium px-2">
+              Каждый участник — победитель!
+            </p>
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-2 sm:mb-4 drop-shadow-lg px-2">
-            Беспроигрышная лотерея
-          </h1>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 font-medium px-2">
-            Каждый участник — победитель!
-          </p>
-        </div>
+        )}
 
         {!wonPrize && (
           <div className="flex justify-center mb-8 sm:mb-12">
