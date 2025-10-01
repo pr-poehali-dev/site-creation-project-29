@@ -139,14 +139,16 @@ const Index = () => {
                   <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white animate-bounce-in tracking-tight mb-8">
                     Поздравляем!
                   </h2>
-                  <div className="relative overflow-hidden bg-gradient-to-br from-[#005BFF] to-[#0046CC] rounded-2xl sm:rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl">
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF1744] rounded-full blur-3xl opacity-30 -translate-y-1/2 translate-x-1/2"></div>
-                    <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#FF1744] rounded-full blur-2xl opacity-20 translate-y-1/2 -translate-x-1/2"></div>
+                  <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl">
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{ backgroundImage: 'url(https://cdn.poehali.dev/files/8a457c01-ea8c-4ba5-9b25-f43cc695b054.png)' }}
+                    ></div>
                     <div className="relative z-10">
-                      <p className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-3">
+                      <p className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-3 drop-shadow-lg">
                         {wonPrize.title}
                       </p>
-                      <p className="text-xl sm:text-2xl text-white/90">
+                      <p className="text-xl sm:text-2xl text-white drop-shadow-md">
                         {wonPrize.description}
                       </p>
                     </div>
