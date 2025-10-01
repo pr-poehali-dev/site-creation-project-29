@@ -102,3 +102,16 @@
     font-family: "Montserrat", sans-serif;
   }
 }
+
+@keyframes shine {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+.animate-shine {
+  animation: shine 3s infinite;
+}

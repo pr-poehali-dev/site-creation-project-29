@@ -144,6 +144,9 @@ const Index = () => {
                       className="absolute inset-0 bg-cover bg-center"
                       style={{ backgroundImage: 'url(https://cdn.poehali.dev/files/8a457c01-ea8c-4ba5-9b25-f43cc695b054.png)' }}
                     ></div>
+                    <div className="absolute inset-0 overflow-hidden">
+                      <div className="absolute top-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-[-25deg] animate-shine"></div>
+                    </div>
                     <div className="relative z-10">
                       <p className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-3 drop-shadow-lg">
                         {wonPrize.title}
